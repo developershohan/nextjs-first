@@ -7,11 +7,10 @@ import User from "@models/user";
 
 const handler = NextAuth({
   providers: [
-    // GoogleProvider({
-    //   clientId:
-    //     "642890051651-gqsittfknisub81k6gfs7ce4m4ujbr0e.apps.googleusercontent.com",
-    //   clientSecret: "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",
-    // }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
+    }),
   ],
   async session({ session }) {},
   async signIn({ profile }) {
