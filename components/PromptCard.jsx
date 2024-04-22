@@ -1,18 +1,30 @@
-import Image from "next/image"
-const PromptCard = ({post, handleTagClick}) => {
-  // console.log(post);
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import { useSession } from "next-auth/react";
+import { usePathname, useRouter } from "next/navigation";
+const PromptCard = ({ post, handleTagClick }) => {
+  
+  
   return (
     <div className="prompt_card">
       <div className="flex">
-        <div className="">
-{/*        
-          <Image
-          src={post?.creator?.image}
-          /> */}
+        <div>
+        <Image
+            src={post.creator.image}
+            alt='user_image'
+            width={40}
+            height={40}
+            className='rounded-full object-contain'
+          />
+          <p>{post.creator.username}</p>
+          <p>{post.prompt}</p>
+
+          <p>{post.tag}</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PromptCard
+export default PromptCard;
