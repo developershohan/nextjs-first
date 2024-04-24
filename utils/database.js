@@ -14,7 +14,7 @@ export const connectToDB = async ()=>{
     try {
         
         await mongoose.connect("mongodb+srv://devshohanur:devshohanur@cluster0.ll0bzap.mongodb.net/?retryWrites=true&w=majority",{
-            dbName: "share_promt"
+            dbName: "share_prompt"
         })
         isConnected = true
         console.log(`mongoDB connected`);
