@@ -29,12 +29,12 @@ const UpdatePrompt = () => {
     if (promptId) getPromptDetails();
   }, [promptId]);
 
-  const updatePrompt = async (e) => {
+  const updatePromptSubmit = async (e) => {
     e.preventDefault();
 
     setSubmitting(true);
 
-    if(!promptId) return alert("prompt not found")
+    if (!promptId) return alert("prompt not found");
     try {
       const res = await fetch(`api/prompt/${promptId}`, {
         method: "PATCH",
@@ -59,7 +59,7 @@ const UpdatePrompt = () => {
       post={post}
       setPost={setPost}
       submitting={submitting}
-      handleSubmit={updatePrompt}
+      handleSubmit={updatePromptSubmit}
     />
   );
 };
